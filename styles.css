@@ -1,0 +1,243 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 20px;
+    /* Keep the flex layout for vertical stacking */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures content is horizontally centered */
+    width: 100%; /* Ensure body takes full width */
+}
+
+/* Heading */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00fff7;
+    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(90deg, #00fff7, #00c6ff);
+    border: none;
+    color: #0f2027;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00fff7;
+}
+
+button:hover, button:focus {
+    background: linear-gradient(90deg, #00c6ff, #00fff7);
+    box-shadow: 0 0 20px #00fff7, 0 0 30px #00c6ff;
+    outline: none;
+}
+
+/* Center the toggle button container */
+#toggle-view-btn {
+    font-size: 1rem;
+    min-width: 180px;
+}
+
+/* Forms - Already max-width 500px and centered by body: align-items: center */
+form {
+    background: rgba(15, 32, 39, 0.85);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #00fff7;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+    transition: background 0.3s ease;
+}
+
+form h2 {
+    margin-bottom: 15px;
+    color: #00fff7;
+    text-shadow: 0 0 5px #00fff7;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"],
+input[type="hidden"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #203a43;
+    color: #e0e0e0;
+    font-size: 1rem;
+    box-shadow: inset 0 0 8px #00fff7;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 0 12px #00fff7;
+}
+
+/* Hide elements with .hidden */
+.hidden {
+    display: none !important;
+}
+
+/* Car container - Centered and set to max width */
+.car-container {
+    width: 100%;
+    max-width: 1200px; 
+    display: grid;
+    gap: 20px;
+    transition: all 0.3s ease;
+    /* Ensures the container itself is centered when max-width is less than screen width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Card view */
+.card-view {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* List view */
+.list-view {
+    grid-template-columns: 1fr;
+}
+
+/* Car card */
+.car-card {
+    background: rgba(15, 32, 39, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px #00fff7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #00fff7, 0 0 40px #00c6ff;
+}
+
+/* Car details wrapper to manage spacing in Card View */
+.car-details {
+    margin-bottom: 25px; 
+}
+
+/* Car details - Name */
+.car-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00fff7;
+    margin-bottom: 8px;
+    text-shadow: 0 0 5px #00fff7;
+}
+
+/* Car details - Model */
+.car-model {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #a0e9f7;
+    margin-bottom: 12px;
+}
+
+/* Car details - Info */
+.car-info {
+    font-size: 1rem;
+    color: #c0e9f7;
+    margin-bottom: 6px;
+}
+
+/* ---------------------------------------------------------------- */
+/* List View Specific Styling */
+/* ---------------------------------------------------------------- */
+
+/* Style for each data row in list view */
+.list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 255, 247, 0.2); 
+}
+
+/* Remove border on the last row of data */
+.list-row:last-of-type {
+    border-bottom: none;
+}
+
+/* Edit and Delete buttons container (Card View - original) */
+.car-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Button container for List View - Pushes buttons to the bottom */
+.list-view .button-group {
+    margin-top: auto; 
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+
+/* Styling for buttons in cards (shared by .car-actions and .button-group) */
+.car-actions button,
+.button-group button {
+    background: transparent;
+    color: #00fff7;
+    border: 2px solid #00fff7;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    align-items: center;;
+}
+
+.car-actions button:hover,
+.button-group button:hover {
+    background: #00fff7;
+    color: #0f2027;
+    box-shadow: 0 0 10px #00fff7;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    form {
+        padding: 15px 20px;
+    }
+
+    .car-card {
+        padding: 15px;
+    }
+}

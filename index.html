@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.7/signalr.min.js"></script>
+</head>
+
+<body>
+    <h1>🚗 Car Showcase</h1>
+
+    <div style="text-align:center; margin-bottom:10px;">
+        <button id="toggle-view-btn">Switch to List View</button>
+    </div>
+
+    <form id="add-car-form">
+        <h2>Add a New Car</h2>
+        <input type="text" id="carName" placeholder="Car Name" required>
+        <input type="text" id="carModel" placeholder="Car Model">
+        <input type="number" id="carYear" placeholder="Year" required>
+        <input type="number" id="carPrice" placeholder="Price" required>
+        <button type="submit">Add Car</button>
+    </form>
+
+    <form id="edit-car-form" class="hidden">
+        <h2>Edit Car</h2>
+        <input type="hidden" id="editCarId">
+        <input type="text" id="editCarName" placeholder="Car Name" required>
+        <input type="text" id="editCarModel" placeholder="Car Model">
+        <input type="number" id="editCarYear" placeholder="Year" required>
+        <input type="number" id="editCarPrice" placeholder="Price" required>
+        <button type="submit">Save Changes</button>
+        <button type="button" id="cancel-edit-btn">Cancel</button>
+    </form>
+
+    <div id="car-container" class="car-container card-view"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
